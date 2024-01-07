@@ -4,7 +4,7 @@ import { Canvas, ThreeEvent, useFrame } from "@react-three/fiber"
 import { ContactShadows, Environment, useGLTF, OrbitControls } from "@react-three/drei"
 import { HexColorPicker } from "react-colorful"
 import { proxy, useSnapshot } from "valtio"
-import { NodeToyMaterial } from '@nodetoy/react-nodetoy';
+import { NodeToyMaterial } from '../ReactNodeToy';
 
 // Using a Valtio state model to bridge reactivity between
 // the canvas and the dom, both can write to it and/or react to it.

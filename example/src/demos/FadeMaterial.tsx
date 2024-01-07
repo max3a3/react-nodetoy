@@ -1,5 +1,5 @@
 import React from 'react';
-import { NodeToyMaterial } from '@nodetoy/react-nodetoy';
+import { NodeToyMaterial } from '../ReactNodeToy';
 import * as THREE from "three"
 import { useRef, useState } from "react"
 import { Canvas, extend, useFrame } from "@react-three/fiber"

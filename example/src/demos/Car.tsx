@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react';
 import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { ContactShadows, Environment, useGLTF, OrbitControls, PresentationControls, Stage, MeshReflectorMaterial } from "@react-three/drei"
-import { ThreeNodeToyMaterial, swapMaterial, NodeToyTick } from '@nodetoy/react-nodetoy';
+import { ThreeNodeToyMaterial, swapMaterial, NodeToyTick } from '../ReactNodeToy';
 import * as THREE from 'three';
 
 

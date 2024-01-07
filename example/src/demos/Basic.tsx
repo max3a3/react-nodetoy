@@ -2,7 +2,7 @@ import React from 'react';
 import * as THREE from "three";
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { NodeToyMaterial, NodeToyTick } from '@nodetoy/react-nodetoy';
+import { NodeToyMaterial, NodeToyTick } from '../ReactNodeToy';
 import RendererSettings from '../renderSettings';
 import { useGLTF, OrbitControls, useFBO, Environment } from '@react-three/drei'
 import { useControls } from 'leva'

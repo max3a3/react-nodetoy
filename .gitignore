@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 /simple/src/three-nodetoy/
+/example/src/three-nodetoy/
