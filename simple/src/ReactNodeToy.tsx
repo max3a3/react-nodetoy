@@ -6,7 +6,7 @@ import {
 	NodeToyCullMode,
 	NodeToyMaterialType,
 	NodeToyMaterialData,
-} from '@nodetoy/three-nodetoy';
+} from './three-nodetoy/NodeToyMaterial';
 
 extend({ ThreeNodeToyMaterial });
 

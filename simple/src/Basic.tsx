@@ -6,6 +6,7 @@ import { NodeToyMaterial, NodeToyTick } from './ReactNodeToy';
 import RendererSettings from './renderSettings';
 import { useGLTF, OrbitControls, useFBO, Environment } from '@react-three/drei'
 import { useControls } from 'leva'
+import { Global, Loading, Page, DemoPanel, Dot, Error, Title, DotContent } from './styles'
 
 const sphereGeometry = new THREE.SphereGeometry(3, 100, 100);
 sphereGeometry.computeTangents(); // NEEDED if there is a normal map
@@ -61,7 +62,7 @@ function NodeToyApp() {
   );
 }
 
-const App = () => (
+const Basic = () => (
   <Canvas dpr={[1, 2]} camera={{ position: [0, 3, 10] }}>
     <color attach="background" args={['#292929']} /> 
     <group position={[0, 0, 0]}>
@@ -72,4 +73,13 @@ const App = () => (
   </Canvas>
 )
 
+const App = ()=> {return(
+  <>
+  <Global />
+  <Page>
+    <Basic/>
+  </Page>
+</>
+)
+  }
 export default App
