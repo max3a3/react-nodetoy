@@ -7,6 +7,7 @@ import RendererSettings from './renderSettings';
 import { useGLTF, OrbitControls, useFBO, Environment } from '@react-three/drei'
 import { useControls } from 'leva'
 import { Global, Loading, Page, DemoPanel, Dot, Error, Title, DotContent } from './styles'
+import { data  } from './BasicMaterial';
 
 const sphereGeometry = new THREE.SphereGeometry(3, 100, 100);
 sphereGeometry.computeTangents(); // NEEDED if there is a normal map
@@ -37,8 +38,8 @@ function Thing() {
       geometry={sphereGeometry}
     >
       <NodeToyMaterial 
-        //verbose={true}
-        url={"https://dev-draft.nodetoy.co/1JrV1CcXr6Hrs8te"} 
+        verbose={true}
+        data={data}
         parameters={materialProps}
         //cullMode={NodeToyCullMode.None}
       />
