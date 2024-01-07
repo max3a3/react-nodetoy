@@ -76,9 +76,7 @@ const Basic = () => (
 const App = ()=> {return(
   <>
   <Global />
-  <Page>
     <Basic/>
-  </Page>
 </>
 )
   }
