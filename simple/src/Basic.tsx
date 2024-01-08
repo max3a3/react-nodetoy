@@ -39,6 +39,7 @@ function Thing() {
     >
       <NodeToyMaterial 
         verbose={true}
+        // url={"https://dev-draft.nodetoy.co/1JrV1CcXr6Hrs8te"}
         data={data}
         parameters={materialProps}
         //cullMode={NodeToyCullMode.None}
