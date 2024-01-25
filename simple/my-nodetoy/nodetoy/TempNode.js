@@ -1,6 +1,5 @@
 import * as THREE_ from "three"
 import { ConstantOrPropertyEnum, InputNode } from './Node';
-
 export const ComponentSelectNode = class ComponentSelectNode extends Node {
   constructor(e) {
     var a;
@@ -97,72 +96,7 @@ export const TempNode = class TempNode extends Node {
 
 };
 TempNode.isTempNode = true;
-export const FloatNode = class FloatNode extends InputNode {
-  constructor() {
-    var e;
-    var r = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : 0;
-    var a = arguments.length > 1 && undefined !== arguments[1] ? arguments[1] : ConstantOrPropertyEnum.Constant;
-    super("float");
-    e = this;
-    e._type = a;
-    return e;
-  }
 
-  get value() {
-    return this._value;
-  }
-
-  set value(e) {
-    this._value = e;
-    this.markDirty();
-  }
-
-};
-FloatNode.isFloatNode = true;
-export const Vector3Node = class Vector3Node extends InputNode {
-  constructor() {
-    var e;
-    var r = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : null;
-    var a = arguments.length > 1 && undefined !== arguments[1] ? arguments[1] : null;
-    var o = arguments.length > 2 && undefined !== arguments[2] ? arguments[2] : null;
-    var s = arguments.length > 3 && undefined !== arguments[3] ? arguments[3] : ConstantOrPropertyEnum.Constant;
-    super("vec3");
-    e = this;
-
-    if (null !== a) {
-      e._value = new THREE_.Vector3(r, a, o);
-    } else {
-      if (null !== r) {
-        e.value = r;
-      } else {
-        e._value = new THREE_.Vector3(0, 0, 0);
-      }
-    }
-
-    return e;
-  }
-
-  get value() {
-    return this._value;
-  }
-
-  set value(e) {
-    if (_instanceOf(e, THREE_.Vector3)) {
-      this._value = e;
-    } else {
-      if (!_instanceOf(e, Object)) {
-        console.warn("[Vector3Node] invalid value: " + e);
-        return;
-      }
-
-      this._value = this._value ? this._value.set(e.x, e.y, e.z) : new THREE_.Vector3(e.x, e.y, e.z);
-    }
-
-    this.markDirty();
-  }
-
-};
-Vector3Node.isVector3Node = true;
 export const SnippedNode = class SnippedNode extends TempNode {
   constructor() {
     var e;
@@ -187,3 +121,53 @@ export const SnippedNode = class SnippedNode extends TempNode {
   }
 
 };
+export const ArrayNode = class ArrayNode extends Node {
+  constructor() {
+    var e;
+    var a = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : [];
+    super();
+    e = this;
+    e.nodes = a;
+    return e;
+  }
+
+  getNodeType(e) {
+    return e.getTypeFromLength(this.nodes.length);
+  }
+
+  generate(e) {
+    var t = this.getNodeType(e);
+    var n = this.nodes;
+    var r = [];
+
+    for (var i = 0; i < n.length; i++) {
+      var a = n[i].build(e, "float");
+      r.push(a);
+    }
+
+    return "".concat(e.getType(t), "( ").concat(r.join(", "), " )");
+  }
+
+};
+export const FloatNode = class FloatNode extends InputNode {
+  constructor() {
+    var e;
+    var r = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : 0;
+    var a = arguments.length > 1 && undefined !== arguments[1] ? arguments[1] : ConstantOrPropertyEnum.Constant;
+    super("float");
+    e = this;
+    e._type = a;
+    return e;
+  }
+
+  get value() {
+    return this._value;
+  }
+
+  set value(e) {
+    this._value = e;
+    this.markDirty();
+  }
+
+};
+FloatNode.isFloatNode = true;

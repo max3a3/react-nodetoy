@@ -104,6 +104,8 @@ export var ConstantOrPropertyEnum = function (e) {
   e[e.Property = 1] = "Property";
   return e;
 }(ConstantOrPropertyEnum || {});
+
+
 export const InputNode = class InputNode extends Node {
   constructor(e) {
     var a;
