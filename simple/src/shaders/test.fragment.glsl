@@ -7,25 +7,25 @@
 // attributes
 
 // varys
-varying vec2 nodeVary0;
+varying vec2 nodeVary0; 
 // vars
 vec2 nodeVar0;
 float nodeVar1;
-vec3 nodeVar2;
+vec3 nodeVar2; 
 // codes
-vec3 mod2D289_YHmzUPZAkje6(vec3 x) {
+vec3 mod2D289_GWsumXSRtoxI(vec3 x) {
 	return x - floor(x * (1.0 / 289.0)) * 289.0;
 }
 
-vec2 mod2D289_YHmzUPZAkje6(vec2 x) {
+vec2 mod2D289_GWsumXSRtoxI(vec2 x) {
 	return x - floor(x * (1.0 / 289.0)) * 289.0;
 }
 
-vec3 permute_YHmzUPZAkje6(vec3 x) {
-	return mod2D289_YHmzUPZAkje6(((x * 34.0) + 1.0) * x);
+vec3 permute_GWsumXSRtoxI(vec3 x) {
+	return mod2D289_GWsumXSRtoxI(((x * 34.0) + 1.0) * x);
 }
 
-float snoise_YHmzUPZAkje6(vec2 v) {
+float snoise_GWsumXSRtoxI(vec2 v) {
 	const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
 	vec2 i = floor(v + dot(v, C.yy));
 	vec2 x0 = v - i + dot(i, C.xx);
@@ -33,8 +33,8 @@ float snoise_YHmzUPZAkje6(vec2 v) {
 	i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
 	vec4 x12 = x0.xyxy + C.xxzz;
 	x12.xy -= i1;
-	i = mod2D289_YHmzUPZAkje6(i);
-	vec3 p = permute_YHmzUPZAkje6(permute_YHmzUPZAkje6(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+	i = mod2D289_GWsumXSRtoxI(i);
+	vec3 p = permute_GWsumXSRtoxI(permute_GWsumXSRtoxI(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
 	vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
 	m = m * m;
 	m = m * m;
@@ -48,9 +48,9 @@ float snoise_YHmzUPZAkje6(vec2 v) {
 	g.yz = a0.yz * x12.xz + h.yz * x12.yw;
 	return 130.0 * dot(m, g);
 }
-float customFn_ANako0IQZEFF(vec2 uv, float scale) {
+float customFn_BTDBt8DrMPrE(vec2 uv, float scale) {
 
-	float noise = snoise_YHmzUPZAkje6(uv * scale);
+	float noise = snoise_GWsumXSRtoxI(uv * scale);
 
 	noise = noise * 0.5 + 0.5;
 	return noise;
@@ -414,8 +414,8 @@ void main() {
 
 #endif
 
-	nodeVar0 = (nodeVary0 * vec2(1, 1) + vec2(0, 0));
-	nodeVar1 = customFn_ANako0IQZEFF(nodeVar0, 4.0);
+	nodeVar0 = (nodeVary0 * vec2(1, 2) + vec2(0, 0));
+	nodeVar1 = customFn_BTDBt8DrMPrE(nodeVar0, 4.0);
 	nodeVar2 = (nodeVar1 * vec3(1, 1, 1));
 
 	diffuseColor = vec4(nodeVar2, 1.0);

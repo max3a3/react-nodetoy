@@ -1,0 +1,350 @@
+{
+  "version": 5,
+  "type": "material",
+  "data": {
+    "library": [],
+    "editor": {
+      "controller": "material",
+      "sceneId": "main",
+      "materialId": "main",
+      "materialInstanceId": null,
+      "materialFunctionId": null,
+      "graph": {
+        "connectionLineType": "default",
+        "snapping": false
+      }
+    },
+    "scenes": {
+      "main": {
+        "name": "Scene",
+        "configuration": {
+          "mesh": {
+            "type": "sphere"
+          },
+          "grid": {
+            "enabled": false
+          },
+          "sky": {
+            "type": 0
+          },
+          "hdri": {
+            "type": 1,
+            "preset": "warehouse"
+          },
+          "rendering": {
+            "encoding": "linear",
+            "toneMapping": "aces-filmic",
+            "toneMappingExposure": 0.9
+          }
+        },
+        "children": [],
+        "materialSlots": {
+          "default": [
+            {
+              "materialId": "main",
+              "isMaterialInstance": false,
+              "enabled": true
+            }
+          ],
+          "custom": null
+        }
+      }
+    },
+    "materials": {
+      "main": {
+        "name": "Default Material",
+        "configuration": {
+          "mesh": {
+            "type": "sphere"
+          },
+          "cullMode": "back",
+          "lightModel": "unlit",
+          "renderType": "opaque",
+          "transform": {
+            "x": 432.6076102178587,
+            "y": -235.05317653794145,
+            "zoom": 1.3195079107728942
+          },
+          "camera": {
+            "type": 1,
+            "position": [
+              2.7424741324574655,
+              1.5661283093011922,
+              -1.4234035800176523
+            ],
+            "rotation": [
+              -2.3084892147605376,
+              0.9135606912221264,
+              2.424994948474927
+            ]
+          }
+        },
+        "nodes": [
+          {
+            "id": "master",
+            "type": "Master",
+            "position": {
+              "x": 487,
+              "y": -33.5
+            },
+            "connections": {
+              "in": {
+                "0": "805e681d-fd63-497a-ba4f-8465db48db46_0_master_0"
+              },
+              "out": {}
+            },
+            "selected": false,
+            "value": {
+              "mesh": {
+                "type": "sphere"
+              },
+              "cullMode": "back",
+              "lightModel": "unlit",
+              "renderType": "opaque",
+              "transform": {
+                "x": 432.6076102178587,
+                "y": -235.05317653794145,
+                "zoom": 1.3195079107728942
+              },
+              "camera": {
+                "type": 1,
+                "position": [
+                  2.7424741324574655,
+                  1.5661283093011922,
+                  -1.4234035800176523
+                ],
+                "rotation": [
+                  -2.3084892147605376,
+                  0.9135606912221264,
+                  2.424994948474927
+                ]
+              }
+            },
+            "zIndex": 0
+          },
+          {
+            "id": "05bf21d3-f12c-43e4-a5d0-4797a947d043",
+            "type": "Add",
+            "value": null,
+            "position": {
+              "x": 267.0364570617676,
+              "y": -36.25
+            },
+            "selected": false,
+            "isPreviewEnabled": true,
+            "connections": {
+              "in": {
+                "0": "f17d5e63-529d-4ec3-8253-06113379e9d9_0_05bf21d3-f12c-43e4-a5d0-4797a947d043_0",
+                "1": "94a801ba-b06e-410f-8f62-6dbf3423a286_0_05bf21d3-f12c-43e4-a5d0-4797a947d043_1"
+              },
+              "out": {
+                "0": [
+                  "05bf21d3-f12c-43e4-a5d0-4797a947d043_0_805e681d-fd63-497a-ba4f-8465db48db46_1"
+                ]
+              }
+            },
+            "zIndex": 3
+          },
+          {
+            "id": "f17d5e63-529d-4ec3-8253-06113379e9d9",
+            "type": "Float",
+            "value": 0.3,
+            "position": {
+              "x": 46.03645706176758,
+              "y": -60.75
+            },
+            "selected": false,
+            "isPreviewEnabled": true,
+            "connections": {
+              "in": {},
+              "out": {
+                "0": [
+                  "f17d5e63-529d-4ec3-8253-06113379e9d9_0_05bf21d3-f12c-43e4-a5d0-4797a947d043_0"
+                ]
+              }
+            },
+            "zIndex": 5,
+            "name": "Float 0",
+            "parameterType": 0
+          },
+          {
+            "id": "94a801ba-b06e-410f-8f62-6dbf3423a286",
+            "type": "Float",
+            "value": 0.7,
+            "position": {
+              "x": 37.03645706176758,
+              "y": 117.75
+            },
+            "selected": false,
+            "isPreviewEnabled": true,
+            "connections": {
+              "in": {},
+              "out": {
+                "0": [
+                  "94a801ba-b06e-410f-8f62-6dbf3423a286_0_05bf21d3-f12c-43e4-a5d0-4797a947d043_1"
+                ]
+              }
+            },
+            "zIndex": 6,
+            "name": "Float 1",
+            "parameterType": 0
+          },
+          {
+            "id": "805e681d-fd63-497a-ba4f-8465db48db46",
+            "type": "NoiseGenerator",
+            "value": {
+              "scale": 4
+            },
+            "position": {
+              "x": 298.55728912353516,
+              "y": 220.75
+            },
+            "selected": false,
+            "isPreviewEnabled": true,
+            "connections": {
+              "in": {
+                "0": "8706cf50-a4b2-4dbd-b4d2-993b4592cef5_0_805e681d-fd63-497a-ba4f-8465db48db46_0",
+                "1": "05bf21d3-f12c-43e4-a5d0-4797a947d043_0_805e681d-fd63-497a-ba4f-8465db48db46_1"
+              },
+              "out": {
+                "0": [
+                  "805e681d-fd63-497a-ba4f-8465db48db46_0_master_0"
+                ]
+              }
+            },
+            "zIndex": 11
+          },
+          {
+            "id": "8706cf50-a4b2-4dbd-b4d2-993b4592cef5",
+            "type": "TextureCoordinates",
+            "value": {
+              "offset": {
+                "x": 4,
+                "y": 0
+              },
+              "tilling": {
+                "x": 5,
+                "y": 5
+              }
+            },
+            "position": {
+              "x": -24.987277631224686,
+              "y": 320.1682230300415
+            },
+            "selected": false,
+            "isPreviewEnabled": false,
+            "connections": {
+              "in": {
+                "1": "aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab_0_8706cf50-a4b2-4dbd-b4d2-993b4592cef5_1"
+              },
+              "out": {
+                "0": [
+                  "8706cf50-a4b2-4dbd-b4d2-993b4592cef5_0_805e681d-fd63-497a-ba4f-8465db48db46_0"
+                ]
+              }
+            },
+            "zIndex": 12
+          },
+          {
+            "id": "78b8c963-32fc-4f6e-8571-b06c26d0722c",
+            "type": "SinTime",
+            "value": null,
+            "position": {
+              "x": -328.7873245351344,
+              "y": 320.58169314860055
+            },
+            "selected": false,
+            "isPreviewEnabled": false,
+            "connections": {
+              "in": {},
+              "out": {
+                "0": [
+                  "78b8c963-32fc-4f6e-8571-b06c26d0722c_0_aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab_0"
+                ]
+              }
+            },
+            "zIndex": 13
+          },
+          {
+            "id": "aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab",
+            "type": "Abs",
+            "value": null,
+            "position": {
+              "x": -176.9755345035209,
+              "y": 484.8415601705756
+            },
+            "selected": true,
+            "isPreviewEnabled": false,
+            "connections": {
+              "in": {
+                "0": "78b8c963-32fc-4f6e-8571-b06c26d0722c_0_aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab_0"
+              },
+              "out": {
+                "0": [
+                  "aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab_0_8706cf50-a4b2-4dbd-b4d2-993b4592cef5_1"
+                ]
+              }
+            },
+            "zIndex": 14
+          }
+        ],
+        "connections": [
+          {
+            "fromNode": "f17d5e63-529d-4ec3-8253-06113379e9d9",
+            "toNode": "05bf21d3-f12c-43e4-a5d0-4797a947d043",
+            "fromPin": "0",
+            "toPin": "0"
+          },
+          {
+            "fromNode": "94a801ba-b06e-410f-8f62-6dbf3423a286",
+            "toNode": "05bf21d3-f12c-43e4-a5d0-4797a947d043",
+            "fromPin": "0",
+            "toPin": "1"
+          },
+          {
+            "fromNode": "8706cf50-a4b2-4dbd-b4d2-993b4592cef5",
+            "toNode": "805e681d-fd63-497a-ba4f-8465db48db46",
+            "fromPin": "0",
+            "toPin": "0"
+          },
+          {
+            "fromNode": "805e681d-fd63-497a-ba4f-8465db48db46",
+            "toNode": "master",
+            "fromPin": "0",
+            "toPin": "0"
+          },
+          {
+            "fromNode": "05bf21d3-f12c-43e4-a5d0-4797a947d043",
+            "toNode": "805e681d-fd63-497a-ba4f-8465db48db46",
+            "fromPin": "0",
+            "toPin": "1"
+          },
+          {
+            "fromNode": "78b8c963-32fc-4f6e-8571-b06c26d0722c",
+            "toNode": "aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab",
+            "fromPin": "0",
+            "toPin": "0"
+          },
+          {
+            "fromNode": "aaeb8d4a-b8b0-400c-a7e9-98c4df5cf6ab",
+            "toNode": "8706cf50-a4b2-4dbd-b4d2-993b4592cef5",
+            "fromPin": "0",
+            "toPin": "1"
+          }
+        ],
+        "zIndex": 14,
+        "usage": {
+          "Master": 1,
+          "Add": 1,
+          "Float": 2,
+          "NoiseGenerator": 1,
+          "TextureCoordinates": 1,
+          "SinTime": 1,
+          "Abs": 1
+        }
+      }
+    },
+    "materialInstances": {},
+    "functionDependencies": []
+  }
+}

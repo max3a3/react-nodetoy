@@ -1,0 +1,6 @@
+there is an old sample three-nodes file using r3f
+since the three-nodes changes rapidly the classes name is different
+
+if you wan't to see it working change the three to 0.131
+
+i found deleting node_modules and rebuilding work if the changes to 0.131 and back doesn't work
